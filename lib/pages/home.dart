@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:red_snack_gestion/pages/inventario.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,7 +8,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Gestión de Red Snack'),
+        title: const Text('Home Red Snack'),
         backgroundColor: Colors.red,
         actions: [
           IconButton(
@@ -47,7 +48,9 @@ class HomeScreen extends StatelessWidget {
               title: const Text('Inventario'),
               onTap: () {
                 // Lógica para ir al Inventario
-                Navigator.pop(context);
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => InventarioScreen()));
               },
             ),
             ListTile(
