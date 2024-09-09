@@ -1,65 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:red_snack_gestion/models/producto.dart';
-import 'package:http/http.dart' as http;
-//import 'dart:io';
+import 'package:red_snack_gestion/controller/inventario_controller.dart'; // Asegúrate de importar la clase
 
 class InventarioScreen extends StatefulWidget {
   const InventarioScreen({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _InventarioScreenState createState() => _InventarioScreenState();
 }
 
 class _InventarioScreenState extends State<InventarioScreen> {
-  // Ejemplo de lista de productos
-  List<Producto> productos = [
-    Producto(
-      nombre: 'Chips Papas',
-      fotoUrl: 'https://via.placeholder.com/150',
-      costoFabricacion: 0.50,
-      precioVenta: 1.00,
-      cantidad: 100,
-    ),
-    Producto(
-      nombre: 'Refresco Cola',
-      fotoUrl: 'https://via.placeholder.com/150',
-      costoFabricacion: 0.30,
-      precioVenta: 1.20,
-      cantidad: 50,
-    ),
-    Producto(
-      nombre: 'Chocolate Bar',
-      fotoUrl: 'https://via.placeholder.com/150',
-      costoFabricacion: 0.80,
-      precioVenta: 1.50,
-      cantidad: 75,
-    ),
-  ];
-
-  // Función para eliminar un producto de la lista
-  void _eliminarProducto(int index) {
-    setState(() {
-      productos.removeAt(index);
-    });
-  }
-
-  // Función para verificar el tamaño de la imagen
-  Future<bool> _esImagenMayorA500px(String url) async {
-    try {
-      final response = await http.head(Uri.parse(url));
-      if (response.statusCode == 200) {
-        int? width = int.tryParse(response.headers['content-width'] ?? '0');
-        int? height = int.tryParse(response.headers['content-height'] ?? '0');
-        if (width != null && height != null && (width > 500 || height > 500)) {
-          return true;
-        }
-      }
-    } catch (e) {
-      return true; // Si hay un error, se asume que no se puede mostrar la imagen
-    }
-    return false;
-  }
+  final InventarioController _controller = InventarioController();
 
   @override
   Widget build(BuildContext context) {
@@ -69,11 +20,11 @@ class _InventarioScreenState extends State<InventarioScreen> {
         backgroundColor: Colors.red,
       ),
       body: ListView.builder(
-        itemCount: productos.length,
+        itemCount: _controller.productos.length,
         itemBuilder: (context, index) {
-          final producto = productos[index];
+          final producto = _controller.productos[index];
           return FutureBuilder<bool>(
-            future: _esImagenMayorA500px(producto.fotoUrl),
+            future: _controller.esImagenMayorA500px(producto.fotoUrl),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const CircularProgressIndicator();
@@ -103,7 +54,7 @@ class _InventarioScreenState extends State<InventarioScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          mostrarDialogoAgregarProducto(context, _agregarProducto);
+          mostrarDialogoAgregarProducto(context, _controller.agregarProducto);
         },
         child: const Icon(Icons.add),
         backgroundColor: Colors.red,
@@ -130,18 +81,13 @@ class _InventarioScreenState extends State<InventarioScreen> {
         trailing: IconButton(
           icon: const Icon(Icons.delete, color: Colors.red),
           onPressed: () {
-            _eliminarProducto(index);
+            setState(() {
+              _controller.eliminarProducto(index);
+            });
           },
         ),
       ),
     );
-  }
-
-  // Esta función simplemente agrega un producto a la lista
-  void _agregarProducto(Producto producto) {
-    setState(() {
-      productos.add(producto);
-    });
   }
 }
 
