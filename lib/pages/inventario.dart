@@ -6,6 +6,7 @@ class InventarioScreen extends StatefulWidget {
   const InventarioScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _InventarioScreenState createState() => _InventarioScreenState();
 }
 
@@ -54,8 +55,13 @@ class _InventarioScreenState extends State<InventarioScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          mostrarDialogoAgregarProducto(context, _controller.agregarProducto);
+          mostrarDialogoAgregarProducto(context, (Producto nuevoProducto) {
+            setState(() {
+              _controller.agregarProducto(nuevoProducto);
+            });
+          });
         },
+        // ignore: sort_child_properties_last
         child: const Icon(Icons.add),
         backgroundColor: Colors.red,
       ),
@@ -161,7 +167,7 @@ void mostrarDialogoAgregarProducto(BuildContext context, Function(Producto) agre
                   cantidad: cantidad,
                 );
                 agregarProducto(nuevoProducto);
-                Navigator.of(context).pop();
+                Navigator.of(context).pop(); 
               }
             },
             child: const Text('Agregar'),
@@ -171,3 +177,4 @@ void mostrarDialogoAgregarProducto(BuildContext context, Function(Producto) agre
     },
   );
 }
+

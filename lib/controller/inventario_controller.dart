@@ -2,6 +2,8 @@
 import 'package:red_snack_gestion/models/producto.dart';
 import 'package:http/http.dart' as http;
 
+
+
 class InventarioController {
   List<Producto> productos = [
     Producto(

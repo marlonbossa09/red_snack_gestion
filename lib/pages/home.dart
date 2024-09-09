@@ -50,6 +50,7 @@ class HomeScreen extends StatelessWidget {
                 // Lógica para ir al Inventario
                   Navigator.push(
                   context,
+                  // ignore: prefer_const_constructors
                   MaterialPageRoute(builder: (context) => InventarioScreen()));
               },
             ),
