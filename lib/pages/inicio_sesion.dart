@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:red_snack_gestion/pages/home.dart';
+import 'package:red_snack_gestion/pages/registro_page.dart';
 
 class RedSnackApp extends StatelessWidget {
   const RedSnackApp({super.key});
@@ -7,7 +8,7 @@ class RedSnackApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Red Snack',
+      title: 'Red Snack gestion',
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
@@ -29,7 +30,7 @@ class LoginScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             const Text(
-              'Bienvenido a Red Snack',
+              'Bienvenido a Red Snack gestion',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 24.0,
@@ -76,6 +77,8 @@ class LoginScreen extends StatelessWidget {
             TextButton(
               onPressed: () {
                 // Navegar a la pantalla de registro
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const RegistroUsuario())
+                );
               },
               child: Text(
                 '¿No tienes una cuenta? Regístrate',
