@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:red_snack_gestion/pages/home.dart';
-import 'package:red_snack_gestion/pages/registro_page.dart';
+import 'package:red_snack_gestion/app/pages/home.dart';
+import 'package:red_snack_gestion/app/pages/registro_page.dart';
 
 class RedSnackApp extends StatelessWidget {
   const RedSnackApp({super.key});
