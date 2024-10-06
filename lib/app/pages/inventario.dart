@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:red_snack_gestion/models/producto.dart';
-import 'package:red_snack_gestion/controller/inventario_controller.dart'; // Asegúrate de importar la clase
+import 'package:red_snack_gestion/app/models/producto.dart';
+import 'package:red_snack_gestion/app/controller/inventario_controller.dart'; // Asegúrate de importar la clase
 
 class InventarioScreen extends StatefulWidget {
   const InventarioScreen({super.key});

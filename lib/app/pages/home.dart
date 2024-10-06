@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:red_snack_gestion/pages/inventario.dart';
+import 'package:red_snack_gestion/app/pages/inventario.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:red_snack_gestion/pages/inicio_sesion.dart';
+import 'package:red_snack_gestion/app/app.dart';
+
 
 void main() {
   runApp(const MyApp());

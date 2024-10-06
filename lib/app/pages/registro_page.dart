@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';  
-import 'package:red_snack_gestion/models/usuario.dart';  
+import 'package:red_snack_gestion/app/models/usuario.dart';  
 
 class RegistroUsuario extends StatefulWidget {  
   const RegistroUsuario({super.key});  
