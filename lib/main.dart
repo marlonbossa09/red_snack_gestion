@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:red_snack_gestion/app/app.dart';
+import 'package:red_snack_gestion/app/pages/inicio_sesion.dart';
 
 
 void main() {
@@ -13,11 +13,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Red Snack Gestion',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const RedSnackApp(),
+      home: const LoginScreen(),
     );
   }
 }
