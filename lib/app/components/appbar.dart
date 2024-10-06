@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:red_snack_gestion/app/pages/inventario.dart';  
 
 class CustomAppBar extends StatelessWidget {  
-  const CustomAppBar({Key? key}) : super(key: key);  
+  final Widget body;  
+
+  const CustomAppBar({Key? key, required this.body}) : super(key: key);  
 
   @override  
   Widget build(BuildContext context) {  
@@ -73,7 +75,7 @@ class CustomAppBar extends StatelessWidget {
           ],  
         ),  
       ),  
-      body: Container(), // Puedes agregar contenido aquí  
+      body: body, // usaremos el cuerpo que se pasa como parámetro  
     );  
   }  
 }
