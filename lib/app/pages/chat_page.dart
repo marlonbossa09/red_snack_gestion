@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:red_snack_gestion/app/widget/appbar.dart';
 
 class Chats extends StatefulWidget {
   const Chats({super.key});
@@ -10,6 +11,9 @@ class Chats extends StatefulWidget {
 class _ChatState extends State<Chats> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return const Scaffold(
+      appBar:  GlobalAppBar(title: 'Home', chatPage: Chats()),   
+      drawer: SideMenu(),
+    );
   }
 }
