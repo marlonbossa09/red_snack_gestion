@@ -5,6 +5,7 @@ class TransaccionesEstado extends StatefulWidget {
   const TransaccionesEstado({super.key});
   
   @override  
+  // ignore: library_private_types_in_public_api
   _TransaccionesEstadoState createState() => _TransaccionesEstadoState();  
 }  
 
@@ -95,7 +96,7 @@ class _TransaccionesEstadoState extends State<TransaccionesEstado> {
                     showTitles: true,  
                     reservedSize: 38,  
                     getTitlesWidget: (value, meta) {  
-                      const dayNames = ['Mn', 'Te', 'Wd', 'Tu', 'Fr', 'St', 'Su'];  
+                      const dayNames = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic',];  
                       return Text(dayNames[value.toInt()]);  
                     },  
                   ),  
