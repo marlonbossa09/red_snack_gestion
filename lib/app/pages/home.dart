@@ -20,13 +20,13 @@ class HomeScreen extends StatelessWidget {
             const Expanded(  
               child: TransaccionesEstado(),  
             ),  
-            const SizedBox(height: 20),  
+            const SizedBox(height: 5),  
             // Tarjetas con ventas, gastos, ganancias  
-            _buildInfoCard('Ventas: 1000'),  
+            _buildInfoCard('Ventas:'),  
             const SizedBox(height: 10),  
-            _buildInfoCard('Gastos: 500'),  
+            _buildInfoCard('Gastos: '),  
             const SizedBox(height: 10),  
-            _buildInfoCard('Ganancias: 500'),  
+            _buildInfoCard('Ganancias: '),  
           ],  
         ),  
       ),  
