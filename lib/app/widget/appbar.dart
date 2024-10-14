@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:red_snack_gestion/app/pages/home.dart';
+import 'package:red_snack_gestion/app/pages/inventario.dart';
+import 'package:red_snack_gestion/app/pages/producto_page.dart';
 
 class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -70,11 +73,23 @@ class SideMenu extends StatelessWidget {
               ),
             ),
             _buildDrawerItem('Inicio', () {
-              // Navegar a la página de inicio
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const HomeScreen()),
+                );
             }),
             _buildDrawerItem('Inventario', () {
-              // Navegar a la página de inventario
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const InventarioScreen()),
+                );
             }),
+            _buildDrawerItem('prodcuto', () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProductoPage()),
+                );
+             }),
             _buildDrawerItem('Historial de ventas', () {
               // Navegar a la página de historial de ventas
             }),
