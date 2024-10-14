@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:red_snack_gestion/app/pages/home.dart';
 import 'package:red_snack_gestion/app/pages/inventario.dart';
-import 'package:red_snack_gestion/app/pages/producto_page.dart';
+import 'package:red_snack_gestion/app/pages/transaciones_page.dart';
+import 'package:red_snack_gestion/app/pages/usuario_page.dart';
 
 class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -84,17 +85,17 @@ class SideMenu extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => const InventarioScreen()),
                 );
             }),
-            _buildDrawerItem('prodcuto', () {
+            _buildDrawerItem('Historial de ventas', () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const ProductoPage()),
+                MaterialPageRoute(builder: (context) => const HistorialVentas()),
                 );
-             }),
-            _buildDrawerItem('Historial de ventas', () {
-              // Navegar a la página de historial de ventas
             }),
             _buildDrawerItem('Perfil', () {
-              // Navegar a la página de perfil
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const UsuarioPage()),
+                );
             }),
             const SizedBox(height: 100), // Espacio extra
             _buildDrawerItem('Cerrar sesión', () {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:red_snack_gestion/app/pages/chat_page.dart';
 import 'package:red_snack_gestion/app/widget/appbar.dart';
-import 'package:fl_chart/fl_chart.dart'; // Biblioteca para gráficos de barras
+import 'package:red_snack_gestion/app/widget/grafica.dart'; // Biblioteca para gráficos de barras
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,60 +9,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const GlobalAppBar(title: 'Home', chatPage: Chat()), // Usa tu AppBar global
-      drawer: const SideMenu(), // Usa tu SideMenu ya implementado
+      appBar: const GlobalAppBar(title: 'Home', chatPage: Chat()), 
+      drawer: const SideMenu(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Gráfico de barras
-            Container(
-              height: 200,
-              decoration: BoxDecoration(
-                color: Colors.grey.shade200,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: BarChart(
-                BarChartData(
-                  borderData: FlBorderData(show: false),
-                  titlesData: FlTitlesData(
-                    show: true,
-                    bottomTitles: AxisTitles(
-                      sideTitles: SideTitles(
-                        showTitles: true,
-                        getTitlesWidget: (double value, TitleMeta meta) {
-                          switch (value.toInt()) {
-                            case 0:
-                              return const Text('Computadoras');
-                            case 1:
-                              return const Text('Móvil');
-                            case 2:
-                              return const Text('Tablet');
-                            default:
-                              return const Text('');
-                          }
-                        },
-                      ),
-                    ),
-                    leftTitles: const AxisTitles(
-                      sideTitles: SideTitles(showTitles: true),
-                    ),
-                  ),
-                  barGroups: [
-                    BarChartGroupData(x: 0, barRods: [
-                      BarChartRodData(toY: 100, color: Colors.blue),
-                    ]),
-                    BarChartGroupData(x: 1, barRods: [
-                      BarChartRodData(toY: 60, color: Colors.blue),
-                    ]),
-                    BarChartGroupData(x: 2, barRods: [
-                      BarChartRodData(toY: 20, color: Colors.blue),
-                    ]),
-                  ],
-                ),
-              ),
-            ),
+            const BarChartSampleEmprendimiento(),
             const SizedBox(height: 20),
             
             // Tarjetas con ventas, gastos, ganancias
