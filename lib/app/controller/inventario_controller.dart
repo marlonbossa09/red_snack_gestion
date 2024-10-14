@@ -8,21 +8,18 @@ class InventarioController {
   List<Producto> productos = [
     Producto(
       nombre: 'Chips Papas',
-      fotoUrl: '',
       costoFabricacion: 0.50,
       precioVenta: 1.00,
       cantidad: 100,
     ),
     Producto(
       nombre: 'Refresco Cola',
-      fotoUrl: '',
       costoFabricacion: 0.30,
       precioVenta: 1.20,
       cantidad: 50,
     ),
     Producto(
       nombre: 'Chocolate Bar',
-      fotoUrl: '',
       costoFabricacion: 0.80,
       precioVenta: 1.50,
       cantidad: 75,

@@ -83,7 +83,7 @@ class _TransaccionesEstadoState extends State<TransaccionesEstado> {
                     final isTransaction = rod.color == Colors.pink;  
                     final value = rod.toY;  
                     return BarTooltipItem(  
-                      '${isTransaction ? "Transacción" : "Total"}: ${value}K',  
+                      '${isTransaction ? "Costos" : "Ganancias"}: ${value}K',  
                       const TextStyle(color: Colors.black),  
                     );  
                   },  
