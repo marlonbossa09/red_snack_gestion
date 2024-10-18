@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:red_snack_gestion/app/controller/inventario_controller.dart';
 import 'package:red_snack_gestion/app/models/producto.dart';
 import 'package:red_snack_gestion/app/pages/chat_page.dart';
+import 'package:red_snack_gestion/app/pages/producto_page.dart';
 import 'package:red_snack_gestion/app/widget/appbar.dart';
 
 
@@ -116,6 +117,10 @@ class _InventarioScreenState extends State<InventarioScreen> {
                 ),  
                 onTap: () {  
                   // Aquí puedes navegar a una página de detalles si lo deseas  
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ProductoPage()),
+                    );
                 },  
               ),  
             );  

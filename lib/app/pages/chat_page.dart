@@ -12,7 +12,7 @@ class _ChatState extends State<Chats> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar:  GlobalAppBar(title: 'Home', chatPage: Chats()),   
+      appBar:  GlobalAppBar(title: 'Chats', chatPage: Chats()),   
       drawer: SideMenu(),
     );
   }
