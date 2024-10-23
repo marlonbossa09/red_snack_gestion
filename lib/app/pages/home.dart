@@ -118,8 +118,6 @@ class HomeScreen extends StatelessWidget {
             // Lógica para agregar la venta
             if (selectedProduct != null && productCountController.text.isNotEmpty) {
               // Aquí puedes hacer la validación o enviar la información al backend
-              print('Producto seleccionado: $selectedProduct');
-              print('Cantidad: ${productCountController.text}');
               Navigator.of(context).pop(); // Cerrar el diálogo
             } else {
               // Mostrar algún mensaje de error si falta seleccionar producto o ingresar cantidad
