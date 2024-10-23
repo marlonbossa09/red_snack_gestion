@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const GlobalAppBar(title: 'Home', chatPage: Chats()),
+      appBar: const GlobalAppBar(title: 'Inicio', chatPage: Chats()),
       drawer: const SideMenu(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
