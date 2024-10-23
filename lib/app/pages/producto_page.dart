@@ -10,6 +10,9 @@ class ProductoPage extends StatefulWidget {
 }  
 
 class _ProductoPageState extends State<ProductoPage> {  
+  // Controlador para el campo de número a agregar
+  final TextEditingController _numberController = TextEditingController();  
+  
   @override  
   Widget build(BuildContext context) {  
     return Scaffold(  
@@ -26,15 +29,15 @@ class _ProductoPageState extends State<ProductoPage> {
                 width: 100,  
                 height: 100,  
                 decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
+                  color: const Color.fromARGB(255, 241, 241, 241),
                   border: Border.all(color: Colors.yellow, width: 2),  
                   borderRadius: BorderRadius.circular(8),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                        spreadRadius: 1,
-                        blurRadius: 15,
-                        offset: const Offset(0, 0),
+                      color: Colors.black.withOpacity(0.1),
+                      spreadRadius: 5,
+                      blurRadius: 5,
+                      offset: const Offset(0, 0),
                     )
                   ]
                 ),  
@@ -69,7 +72,7 @@ class _ProductoPageState extends State<ProductoPage> {
               // Botón para agregar a inventario  
               ElevatedButton(  
                 onPressed: () {  
-                  // Acción al presionar el botón  
+                  _showAddInventoryDialog(context);  // Mostrar el diálogo
                 },  
                 style: ElevatedButton.styleFrom(  
                   // ignore: deprecated_member_use
@@ -87,4 +90,52 @@ class _ProductoPageState extends State<ProductoPage> {
       ),  
     );  
   }  
+
+  // Función para mostrar el diálogo de agregar a inventario
+  void _showAddInventoryDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.0),
+          ),
+          contentPadding: const EdgeInsets.all(20.0),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                "Agregar a Inventario",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
+              TextField(
+                controller: _numberController,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  hintText: "Agregar número",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  // Acción al agregar el número al inventario
+                  Navigator.of(context).pop(); // Cerrar el diálogo
+                },
+                style: ElevatedButton.styleFrom(
+                  // ignore: deprecated_member_use
+                  primary: Colors.red, // Color del botón
+                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                ),
+                child: const Text("Agregar", style: TextStyle(color: Colors.white)),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 }
