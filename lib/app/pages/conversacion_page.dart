@@ -122,10 +122,12 @@ class _ConversacionPageState extends State<ConversacionPage> {
                   onPressed: () {
                     if (isTyping) {
                       // Lógica para enviar mensaje
+                      // ignore: avoid_print
                       print("Mensaje enviado: ${_messageController.text}");
                       _messageController.clear(); // Limpiar el campo después de enviar
                     } else {
                       // Lógica para activar el micrófono o grabar
+                      // ignore: avoid_print
                       print("Grabar audio");
                     }
                   },
