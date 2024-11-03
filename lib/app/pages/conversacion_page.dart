@@ -132,7 +132,7 @@ class _ConversacionPageState extends State<ConversacionPage> {
                     }
                   },
                   backgroundColor: Colors.red,
-                  child: Icon(isTyping ? Icons.send : Icons.mic), // Cambia entre mic y enviar
+                  child: const Icon(Icons.send), // Cambia entre mic y enviar
                 ),
               ],
             ),
