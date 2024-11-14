@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:red_snack_gestion/app/pages/chat_page.dart';
 import 'package:red_snack_gestion/app/widget/appbar.dart';
-import 'package:red_snack_gestion/app/widget/grafica.dart'; // Biblioteca para gráficos de barras  
+import 'package:red_snack_gestion/app/widget/grafica.dart';
+import 'package:red_snack_gestion/app/widget/prueba.dart'; // Biblioteca para gráficos de barras  
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,6 +17,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Prueba(texto: 'Hola esto es una prueba desde un Widget personaliado'),
             // Usa Expanded o Flexible para el gráfico
             const Expanded(
               child: TransaccionesEstado(),

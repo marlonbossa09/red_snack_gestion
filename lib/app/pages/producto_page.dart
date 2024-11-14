@@ -76,7 +76,7 @@ class _ProductoPageState extends State<ProductoPage> {
                 },  
                 style: ElevatedButton.styleFrom(  
                   // ignore: deprecated_member_use
-                  primary: Colors.red, // Color de fondo  
+                  backgroundColor: Colors.red, // Color de fondo  
                   padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),  
                 ),  
                 child: const Text(  
@@ -127,7 +127,7 @@ class _ProductoPageState extends State<ProductoPage> {
                 },
                 style: ElevatedButton.styleFrom(
                   // ignore: deprecated_member_use
-                  primary: Colors.red, // Color del botón
+                  backgroundColor: Colors.red, // Color del botón
                   padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 ),
                 child: const Text("Agregar", style: TextStyle(color: Colors.white)),
