@@ -34,6 +34,7 @@ class _ProductoPageState extends State<ProductoPage> {
                     borderRadius: BorderRadius.circular(8),
                     boxShadow: [
                       BoxShadow(
+                        // ignore: deprecated_member_use
                         color: Colors.black.withOpacity(0.1),
                         spreadRadius: 5,
                         blurRadius: 5,

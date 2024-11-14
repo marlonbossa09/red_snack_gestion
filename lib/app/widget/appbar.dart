@@ -8,7 +8,8 @@ class GlobalAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final Widget chatPage;
 
-  const GlobalAppBar({super.key, 
+  const GlobalAppBar({
+    super.key,
     required this.title,
     required this.chatPage,
   });
@@ -77,25 +78,27 @@ class SideMenu extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const HomeScreen()),
-                );
+              );
             }),
             _buildDrawerItem('Inventario', () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const InventarioScreen()),
-                );
+                MaterialPageRoute(
+                    builder: (context) => const InventarioScreen()),
+              );
             }),
             _buildDrawerItem('Historial de ventas', () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HistorialVentas()),
-                );
+                MaterialPageRoute(
+                    builder: (context) => const HistorialVentas()),
+              );
             }),
             _buildDrawerItem('Perfil', () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const UsuarioPage()),
-                );
+              );
             }),
             const SizedBox(height: 100), // Espacio extra
             _buildDrawerItem('Cerrar sesión', () {
@@ -108,7 +111,8 @@ class SideMenu extends StatelessWidget {
   }
 
   // Método auxiliar para crear cada opción del menú
-  Widget _buildDrawerItem(String text, VoidCallback onTap, {bool isLogout = false}) {
+  Widget _buildDrawerItem(String text, VoidCallback onTap,
+      {bool isLogout = false}) {
     return ListTile(
       title: Text(
         text,
@@ -118,6 +122,7 @@ class SideMenu extends StatelessWidget {
         ),
       ),
       onTap: onTap,
+      // ignore: deprecated_member_use
       tileColor: isLogout ? Colors.white.withOpacity(0.1) : Colors.transparent,
       shape: RoundedRectangleBorder(
         side: const BorderSide(color: Colors.white),

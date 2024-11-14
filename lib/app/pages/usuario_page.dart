@@ -10,12 +10,15 @@ class UsuarioPage extends StatefulWidget {
 }
 
 class _UsuarioPageState extends State<UsuarioPage> {
-  bool _showPasswordFields = false; // Estado para mostrar/ocultar campos de contraseña
-  bool _showEmailFields = false; // Estado para mostrar/ocultar campos de actualización de correo
+  bool _showPasswordFields =
+      false; // Estado para mostrar/ocultar campos de contraseña
+  bool _showEmailFields =
+      false; // Estado para mostrar/ocultar campos de actualización de correo
 
   final TextEditingController _oldPasswordController = TextEditingController();
   final TextEditingController _newPasswordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
   // Controlador para el correo electrónico
   final TextEditingController _newEmailController = TextEditingController();
@@ -64,6 +67,7 @@ class _UsuarioPageState extends State<UsuarioPage> {
                   borderRadius: BorderRadius.circular(12),
                   boxShadow: [
                     BoxShadow(
+                      // ignore: deprecated_member_use
                       color: Colors.grey.withOpacity(0.5),
                       blurRadius: 5,
                       offset: const Offset(0, 3),
@@ -92,7 +96,8 @@ class _UsuarioPageState extends State<UsuarioPage> {
                           ),
                           onPressed: () {
                             setState(() {
-                              _showPasswordFields = !_showPasswordFields; // Mostrar/ocultar campos de contraseña
+                              _showPasswordFields =
+                                  !_showPasswordFields; // Mostrar/ocultar campos de contraseña
                             });
                           },
                         ),
@@ -158,7 +163,8 @@ class _UsuarioPageState extends State<UsuarioPage> {
                           ),
                           onPressed: () {
                             setState(() {
-                              _showEmailFields = !_showEmailFields; // Mostrar/ocultar campos de actualización de correo
+                              _showEmailFields =
+                                  !_showEmailFields; // Mostrar/ocultar campos de actualización de correo
                             });
                           },
                         ),
@@ -200,7 +206,8 @@ class _UsuarioPageState extends State<UsuarioPage> {
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.red,
-                  padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
