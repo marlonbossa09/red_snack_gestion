@@ -1,95 +1,95 @@
-import 'package:flutter/material.dart';  
-import 'package:red_snack_gestion/app/pages/chat_page.dart';  
-import 'package:red_snack_gestion/app/widget/appbar.dart';  
+import 'package:flutter/material.dart';
+import 'package:red_snack_gestion/app/pages/chat_page.dart';
+import 'package:red_snack_gestion/app/widget/appbar.dart';
 
-class ProductoPage extends StatefulWidget {  
-  const ProductoPage({super.key});  
+class ProductoPage extends StatefulWidget {
+  const ProductoPage({super.key});
 
-  @override  
-  State<ProductoPage> createState() => _ProductoPageState();  
-}  
+  @override
+  State<ProductoPage> createState() => _ProductoPageState();
+}
 
-class _ProductoPageState extends State<ProductoPage> {  
+class _ProductoPageState extends State<ProductoPage> {
   // Controlador para el campo de número a agregar
-  final TextEditingController _numberController = TextEditingController();  
-  
-  @override  
-  Widget build(BuildContext context) {  
-    return Scaffold(  
-      appBar: const GlobalAppBar(title: 'Producto', chatPage: Chats()),  
-      drawer: const SideMenu(),  
+  final TextEditingController _numberController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: const GlobalAppBar(title: 'Producto', chatPage: Chats()),
+      drawer: const SideMenu(),
       body: Center(
-        child: Padding(  
-          padding: const EdgeInsets.all(16.0),  
-          child: Column(  
-            mainAxisAlignment: MainAxisAlignment.center,  
-            children: [  
-              // Icono del producto  
-              Container(  
-                width: 100,  
-                height: 100,  
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Icono del producto
+              Container(
+                width: 100,
+                height: 100,
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 241, 241, 241),
-                  border: Border.all(color: Colors.yellow, width: 2),  
-                  borderRadius: BorderRadius.circular(8),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      spreadRadius: 5,
-                      blurRadius: 5,
-                      offset: const Offset(0, 0),
-                    )
-                  ]
-                ),  
-                child: const Icon(  
-                  Icons.camera, // Cambia esto por el icono que desees  
-                  color: Colors.red,  
-                  size: 50,  
-                ),  
-              ),  
-              const SizedBox(height: 20),  
-              // Información del producto  
-              const Text(  
-                'Nombre:',  
-                style: TextStyle(fontSize: 18),  
-              ),  
-              const SizedBox(height: 10),  
-              const Text(  
-                'Cantidad en inventario:',  
-                style: TextStyle(fontSize: 16),  
-              ),  
-              const SizedBox(height: 10),  
-              const Text(  
-                'Precio:',  
-                style: TextStyle(fontSize: 16),  
-              ),  
-              const SizedBox(height: 10),  
-              const Text(  
-                'Costo de fabricación:',  
-                style: TextStyle(fontSize: 16),  
-              ),  
-              const SizedBox(height: 20),  
-              // Botón para agregar a inventario  
-              ElevatedButton(  
-                onPressed: () {  
-                  _showAddInventoryDialog(context);  // Mostrar el diálogo
-                },  
-                style: ElevatedButton.styleFrom(  
+                    color: const Color.fromARGB(255, 241, 241, 241),
+                    border: Border.all(color: Colors.yellow, width: 2),
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        spreadRadius: 5,
+                        blurRadius: 5,
+                        offset: const Offset(0, 0),
+                      )
+                    ]),
+                child: const Icon(
+                  Icons.camera, // Cambia esto por el icono que desees
+                  color: Colors.red,
+                  size: 50,
+                ),
+              ),
+              const SizedBox(height: 20),
+              // Información del producto
+              const Text(
+                'Nombre:',
+                style: TextStyle(fontSize: 18),
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                'Cantidad en inventario:',
+                style: TextStyle(fontSize: 16),
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                'Precio:',
+                style: TextStyle(fontSize: 16),
+              ),
+              const SizedBox(height: 10),
+              const Text(
+                'Costo de fabricación:',
+                style: TextStyle(fontSize: 16),
+              ),
+              const SizedBox(height: 20),
+              // Botón para agregar a inventario
+              ElevatedButton(
+                onPressed: () {
+                  _showAddInventoryDialog(context); // Mostrar el diálogo
+                },
+                style: ElevatedButton.styleFrom(
                   // ignore: deprecated_member_use
-                  primary: Colors.red, // Color de fondo  
-                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),  
-                ),  
-                child: const Text(  
-                  'Agregar a inventario',  
-                  style: TextStyle(color: Colors.white),  
-                ),  
-              ),  
-            ],  
-          ),  
+                  backgroundColor: Colors.red, // Color de fondo
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                ),
+                child: const Text(
+                  'Agregar a inventario',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ],
+          ),
         ),
-      ),  
-    );  
-  }  
+      ),
+    );
+  }
 
   // Función para mostrar el diálogo de agregar a inventario
   void _showAddInventoryDialog(BuildContext context) {
@@ -127,10 +127,12 @@ class _ProductoPageState extends State<ProductoPage> {
                 },
                 style: ElevatedButton.styleFrom(
                   // ignore: deprecated_member_use
-                  primary: Colors.red, // Color del botón
-                  padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                  backgroundColor: Colors.red, // Color del botón
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                 ),
-                child: const Text("Agregar", style: TextStyle(color: Colors.white)),
+                child: const Text("Agregar",
+                    style: TextStyle(color: Colors.white)),
               ),
             ],
           ),
